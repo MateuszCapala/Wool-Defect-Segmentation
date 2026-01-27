@@ -1,0 +1,18 @@
+project_name: "wool-defect-segmentation"
+data:
+  train_dir: "data/train"
+  test_dir: "data/test"
+  img_size: [448, 448]
+
+model:
+  architecture: "UnetPlusPlus"  
+  encoder: "resnet50"
+  weights: "imagenet"
+  in_channels: 1  
+
+train:
+  batch_size: 8
+  lr: 0.0003
+  epochs: 250
+  patience: 20
+  device: "cuda"
